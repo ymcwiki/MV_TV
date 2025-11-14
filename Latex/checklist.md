@@ -1,6 +1,6 @@
 # TAVR文献处理进度清单
 
-**总进度**: 0/231 (0.0%)
+**总进度**: 3/231 (1.3%)
 
 **最后更新**: 2025-11-14
 
@@ -22,11 +22,11 @@
 ---
 
 ## 主题1: 指南与基础 (Guidelines & Fundamentals)
-**进度**: 0/12
+**进度**: 3/12
 
-- [ ] addressing-disparities-in-aortic-stenosis-management-have-we-made-progress.pdf
-- [ ] addressing-undertreatment-in-aortic-stenosis-target-as-detect-as-and-beyond.pdf
-- [ ] aortic-valve-guidelines.pdf
+- [x] addressing-disparities-in-aortic-stenosis-management-have-we-made-progress.pdf
+- [x] addressing-undertreatment-in-aortic-stenosis-target-as-detect-as-and-beyond.pdf
+- [x] aortic-valve-guidelines.pdf
 - [ ] aortic-valve-replacement-today-international-guidelines-and-current-trends.pdf
 - [ ] considerations-for-lifetime-management-of-severe-aortic-stenosis.pdf
 - [ ] expanding-role-of-tavi-to-asymptomatic-severe-aortic-stenosis.pdf

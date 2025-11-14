@@ -22,13 +22,13 @@
 ---
 
 ## 主题1: 指南与基础 (Guidelines & Fundamentals)
-**进度**: 3/12
+**进度**: 5/12
 
 - [x] addressing-disparities-in-aortic-stenosis-management-have-we-made-progress.pdf
 - [x] addressing-undertreatment-in-aortic-stenosis-target-as-detect-as-and-beyond.pdf
 - [x] aortic-valve-guidelines.pdf
-- [ ] aortic-valve-replacement-today-international-guidelines-and-current-trends.pdf
-- [ ] considerations-for-lifetime-management-of-severe-aortic-stenosis.pdf
+- [x] aortic-valve-replacement-today-international-guidelines-and-current-trends.pdf
+- [x] considerations-for-lifetime-management-of-severe-aortic-stenosis.pdf
 - [ ] expanding-role-of-tavi-to-asymptomatic-severe-aortic-stenosis.pdf
 - [ ] implications-for-tavr-first-or-savr-first-strategies.pdf
 - [ ] low-flow-low-gradient-severe-aortic-stenosis-how-low-is-too-low-to-treat.pdf

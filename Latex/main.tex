@@ -58,7 +58,7 @@
 % ============================================
 % 文档信息
 % ============================================
-\title{经导管心脏瓣膜介入治疗\\临床研究文献综述}
+\title{经导管主动脉瓣置换术（TAVR）\\临床研究文献综述\\231篇文献系统性整理}
 \author{Claude AI Assistant}
 \date{\today}
 
@@ -75,12 +75,12 @@
 \newpage
 
 % 插图目录（可选）
-\listoffigures
-\newpage
+% \listoffigures
+% \newpage
 
 % 表格目录（可选）
-\listoftables
-\newpage
+% \listoftables
+% \newpage
 
 % ============================================
 % 前言
@@ -88,36 +88,113 @@
 \chapter*{前言}
 \addcontentsline{toc}{chapter}{前言}
 
-本文档系统性地整理和分析了经导管心脏瓣膜介入治疗领域的重要临床研究文献，特别聚焦于以下几个关键主题：
+本文档系统性地整理和分析了经导管主动脉瓣置换术（TAVR/TAVI）领域的231篇临床研究文献，按照16个主题进行分类整理。
+
+\section*{项目概述}
+
+TAVR作为治疗主动脉瓣狭窄的革命性技术，在过去二十年中取得了巨大进展。本文献综述项目旨在：
 
 \begin{itemize}
-    \item 左心室逆向重塑（LV Reverse Remodeling）
-    \item 经导管二尖瓣置换术（TMVR）
-    \item 经导管二尖瓣修复术（TMVR Repair）
-    \item 心室重建技术
-    \item 其他相关介入治疗技术
+    \item 系统性整理TAVR相关的临床研究证据
+    \item 为每篇文献提供详细的摘要和分析
+    \item 按主题分类，便于查阅和学习
+    \item 建立完整的TAVR知识数据库
 \end{itemize}
 
-本文档旨在为临床医生、研究人员和医学生提供一个全面、系统的文献综述资料，帮助理解当前心血管介入治疗领域的最新进展和临床证据。
+\section*{16个主题分类}
+
+本文档涵盖以下16个主题，共231篇文献：
+
+\begin{enumerate}
+    \item \textbf{指南与基础} (12篇) - TAVR国际指南、TAVR vs SAVR策略研究
+    \item \textbf{瓣膜选择与技术} (23篇) - 球囊扩张型vs自膨胀型、瓣膜设计与性能
+    \item \textbf{复杂解剖与高危患者} (28篇) - 二叶瓣、小瓣环、Marfan综合征等
+    \item \textbf{瓣中瓣与再次干预} (25篇) - ViV TAVR、Redo TAVR技术
+    \item \textbf{并发症} (22篇) - 瓣周漏、冠脉阻塞、瓣膜脱位等
+    \item \textbf{传导阻滞与起搏器} (11篇) - 起搏器植入预测与管理
+    \item \textbf{围术期管理} (9篇) - 血流动力学管理、ECMO支持
+    \item \textbf{成像与术前规划} (10篇) - CT规划、3D模拟、风险预测
+    \item \textbf{主动脉瓣反流} (6篇) - AR的TAVR治疗、专用装置
+    \item \textbf{钙化相关} (7篇) - 极重度钙化、钙化评分
+    \item \textbf{冠脉介入} (8篇) - TAVR后PCI、同期PCI+TAVR
+    \item \textbf{长期结果} (10篇) - 耐久性、长期生存率
+    \item \textbf{创新技术与未来} (8篇) - 机器人辅助、AI引导
+    \item \textbf{入路与技术} (5篇) - 经股动脉、替代入路
+    \item \textbf{同期治疗与二尖瓣} (3篇) - MR合并AS的处理
+    \item \textbf{临床实践优化} (11篇) - 早期出院、效率提升
+\end{enumerate}
+
+\section*{文献处理原则}
+
+每篇文献都经过以下处理：
+\begin{itemize}
+    \item 完整阅读PDF全文
+    \item 摘录研究背景、方法、结果、结论
+    \item 提取关键数据和图表信息
+    \item 分析临床意义和应用价值
+    \item 记录研究局限性
+\end{itemize}
 
 \vspace{1cm}
 
-\noindent 编写日期：\today \\
-\noindent 编写工具：XeLaTeX \\
-\noindent 版本：1.0
+\noindent \textbf{编写日期}：\today \\
+\noindent \textbf{编写工具}：XeLaTeX \\
+\noindent \textbf{文档版本}：2.0 \\
+\noindent \textbf{文献总数}：231篇
 
 \newpage
 
 % ============================================
-% 主体章节
+% 主体章节 - 16个主题
 % ============================================
 
-% 第一章：LV逆向重塑
-\input{chapters/lv_reverse_remodeling/chapter.tex}
+% 主题1: 指南与基础
+\input{topics/01_guidelines_fundamentals/chapter.tex}
 
-% 预留后续章节
-% \input{chapters/chapter2/chapter.tex}
-% \input{chapters/chapter3/chapter.tex}
+% 主题2: 瓣膜选择与技术
+\input{topics/02_valve_selection_technology/chapter.tex}
+
+% 主题3: 复杂解剖与高危患者
+\input{topics/03_complex_anatomy_highrisk/chapter.tex}
+
+% 主题4: 瓣中瓣与再次干预
+\input{topics/04_valve_in_valve_redo/chapter.tex}
+
+% 主题5: 并发症
+\input{topics/05_complications/chapter.tex}
+
+% 主题6: 传导阻滞与起搏器
+\input{topics/06_conduction_pacemaker/chapter.tex}
+
+% 主题7: 围术期管理
+\input{topics/07_periprocedural_management/chapter.tex}
+
+% 主题8: 成像与术前规划
+\input{topics/08_imaging_planning/chapter.tex}
+
+% 主题9: 主动脉瓣反流
+\input{topics/09_aortic_regurgitation/chapter.tex}
+
+% 主题10: 钙化相关
+\input{topics/10_calcification/chapter.tex}
+
+% 主题11: 冠脉介入
+\input{topics/11_coronary_intervention/chapter.tex}
+
+% 主题12: 长期结果
+\input{topics/12_longterm_outcomes/chapter.tex}
+
+% 主题13: 创新技术与未来
+\input{topics/13_innovation_future/chapter.tex}
+
+% 主题14: 入路与技术
+\input{topics/14_access_techniques/chapter.tex}
+
+% 主题15: 同期治疗与二尖瓣
+\input{topics/15_concomitant_mitral/chapter.tex}
+
+% 主题16: 临床实践优化
+\input{topics/16_practice_optimization/chapter.tex}
 
 % ============================================
 % 参考文献
@@ -125,56 +202,49 @@
 \chapter*{参考文献}
 \addcontentsline{toc}{chapter}{参考文献}
 
-% 如果使用BibTeX，取消下面两行的注释
+本文档引用的231篇PDF文献详见各主题章节中的具体文献信息。
+
+% 如果使用BibTeX，可取消下面两行的注释
 % \bibliographystyle{plain}
 % \bibliography{references}
 
-% 目前使用手动文献列表
-\begin{thebibliography}{99}
+\vspace{1cm}
 
-\bibitem{highlife3year}
-HighLife TMVR System: Long-term 3-year Clinical Outcomes and Valve Performance.
-\textit{PDF文件名: highlife-tmvr-system-long-term-3-year-clinical-outcomes-and-valve-performa.pdf}
-
-\bibitem{tct879}
-TCT-879: Left Ventricular Reverse Remodeling Following Transcatheter Mitral Valve Replacement.
-\textit{PDF文件名: tct-879-left-ventricular-reverse-remodeling-following-transcatheter-mitral-v.pdf}
-
-\bibitem{revalve}
-Transcatheter Mitral Valve Replacement Using a Single-Step TMVR System (ReValve).
-\textit{PDF文件名: transcatheter-mitral-valve-replacement-using-a-single-step-tmvr-system-revalve.pdf}
-
-\bibitem{carlen}
-Transcatheter Cardiac Leaflet Enhancer (CARLEN) to Treat Functional Mitral Regurgitation.
-\textit{PDF文件名: transcatheter-cardiac-leaflet-enhancer-carlen-to-treat-functional-mitral-re.pdf}
-
-\bibitem{accucinch}
-The AccuCinch Ventricular Reconstruction System.
-\textit{PDF文件名: the-accucinch-ventricular-reconstruction-system.pdf}
-
-\bibitem{revivent}
-The BioVentrix Revivent System.
-\textit{PDF文件名: the-bioventrix-revivent-system.pdf}
-
-\bibitem{carillon}
-The Carillon Mitral Contour System.
-\textit{PDF文件名: the-carillon-mitral-contour-system.pdf}
-
-\bibitem{cleve}
-TCT-1484: CLEVE to the Rescue - Leveraging Innovation in Novel Leaflet Modification.
-\textit{PDF文件名: tct-1484-cleve-to-the-rescue-leveraging-innovation-in-novel-leaflet-modific.pdf}
-
-\bibitem{mteer}
-TCT-1499: Transcatheter Edge-to-Edge Repair for Severe Mitral Regurgitation.
-\textit{PDF文件名: tct-1499-transcatheter-edge-to-edge-repair-for-severe-mitral-regurgitation-i.pdf}
-
-\end{thebibliography}
+\noindent 所有文献的原始PDF文件存放在对应主题的 \texttt{pdf/} 文件夹中。\\
+\noindent 文献详细信息请参阅 \texttt{checklist.md} 文件。
 
 % ============================================
-% 附录（如果需要）
+% 附录
 % ============================================
-% \appendix
-% \chapter{附录A：缩略词表}
-% \chapter{附录B：补充数据}
+\appendix
+
+\chapter{缩略词表}
+
+\begin{description}
+    \item[TAVR] Transcatheter Aortic Valve Replacement - 经导管主动脉瓣置换术
+    \item[TAVI] Transcatheter Aortic Valve Implantation - 经导管主动脉瓣植入术
+    \item[SAVR] Surgical Aortic Valve Replacement - 外科主动脉瓣置换术
+    \item[AS] Aortic Stenosis - 主动脉瓣狭窄
+    \item[AR] Aortic Regurgitation - 主动脉瓣反流
+    \item[ViV] Valve-in-Valve - 瓣中瓣
+    \item[PVL] Paravalvular Leak - 瓣周漏
+    \item[PCI] Percutaneous Coronary Intervention - 经皮冠状动脉介入治疗
+    \item[ECMO] Extracorporeal Membrane Oxygenation - 体外膜肺氧合
+    \item[CT] Computed Tomography - 计算机断层扫描
+    \item[LVEF] Left Ventricular Ejection Fraction - 左心室射血分数
+    \item[NYHA] New York Heart Association - 纽约心脏协会心功能分级
+    \item[BAV] Bicuspid Aortic Valve - 二叶主动脉瓣
+    \item[MR] Mitral Regurgitation - 二尖瓣反流
+    \item[M-TEER] Mitral Transcatheter Edge-to-Edge Repair - 二尖瓣经导管边对边修复
+\end{description}
+
+\chapter{主题分类说明}
+
+详细的主题分类说明和文献清单请参阅项目文档：
+\begin{itemize}
+    \item \texttt{Claude.md} - 项目总体大纲和进度跟踪
+    \item \texttt{checklist.md} - 231篇文献的完整清单
+    \item \texttt{classification\_analysis.md} - 主题分类依据和关键词
+\end{itemize}
 
 \end{document}

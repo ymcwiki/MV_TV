@@ -1,0 +1,180 @@
+\documentclass[12pt,a4paper,UTF8]{ctexbook}
+
+% ============================================
+% 宏包引用
+% ============================================
+
+% 页面设置
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry}
+
+% 图形和颜色
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% 数学公式
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% 表格增强
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{longtable}
+
+% 列表环境
+\usepackage{enumitem}
+
+% 超链接
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+            citecolor=red,
+            urlcolor=blue]{hyperref}
+
+% 文献引用
+\usepackage{cite}
+
+% 代码高亮（如果需要）
+\usepackage{listings}
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+}
+
+% 页眉页脚
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\leftmark}
+\fancyhead[LO]{\rightmark}
+
+% 图表标题
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf}
+
+% ============================================
+% 文档信息
+% ============================================
+\title{经导管心脏瓣膜介入治疗\\临床研究文献综述}
+\author{Claude AI Assistant}
+\date{\today}
+
+% ============================================
+% 正文开始
+% ============================================
+\begin{document}
+
+% 封面
+\maketitle
+
+% 目录
+\tableofcontents
+\newpage
+
+% 插图目录（可选）
+\listoffigures
+\newpage
+
+% 表格目录（可选）
+\listoftables
+\newpage
+
+% ============================================
+% 前言
+% ============================================
+\chapter*{前言}
+\addcontentsline{toc}{chapter}{前言}
+
+本文档系统性地整理和分析了经导管心脏瓣膜介入治疗领域的重要临床研究文献，特别聚焦于以下几个关键主题：
+
+\begin{itemize}
+    \item 左心室逆向重塑（LV Reverse Remodeling）
+    \item 经导管二尖瓣置换术（TMVR）
+    \item 经导管二尖瓣修复术（TMVR Repair）
+    \item 心室重建技术
+    \item 其他相关介入治疗技术
+\end{itemize}
+
+本文档旨在为临床医生、研究人员和医学生提供一个全面、系统的文献综述资料，帮助理解当前心血管介入治疗领域的最新进展和临床证据。
+
+\vspace{1cm}
+
+\noindent 编写日期：\today \\
+\noindent 编写工具：XeLaTeX \\
+\noindent 版本：1.0
+
+\newpage
+
+% ============================================
+% 主体章节
+% ============================================
+
+% 第一章：LV逆向重塑
+\input{chapters/lv_reverse_remodeling/chapter.tex}
+
+% 预留后续章节
+% \input{chapters/chapter2/chapter.tex}
+% \input{chapters/chapter3/chapter.tex}
+
+% ============================================
+% 参考文献
+% ============================================
+\chapter*{参考文献}
+\addcontentsline{toc}{chapter}{参考文献}
+
+% 如果使用BibTeX，取消下面两行的注释
+% \bibliographystyle{plain}
+% \bibliography{references}
+
+% 目前使用手动文献列表
+\begin{thebibliography}{99}
+
+\bibitem{highlife3year}
+HighLife TMVR System: Long-term 3-year Clinical Outcomes and Valve Performance.
+\textit{PDF文件名: highlife-tmvr-system-long-term-3-year-clinical-outcomes-and-valve-performa.pdf}
+
+\bibitem{tct879}
+TCT-879: Left Ventricular Reverse Remodeling Following Transcatheter Mitral Valve Replacement.
+\textit{PDF文件名: tct-879-left-ventricular-reverse-remodeling-following-transcatheter-mitral-v.pdf}
+
+\bibitem{revalve}
+Transcatheter Mitral Valve Replacement Using a Single-Step TMVR System (ReValve).
+\textit{PDF文件名: transcatheter-mitral-valve-replacement-using-a-single-step-tmvr-system-revalve.pdf}
+
+\bibitem{carlen}
+Transcatheter Cardiac Leaflet Enhancer (CARLEN) to Treat Functional Mitral Regurgitation.
+\textit{PDF文件名: transcatheter-cardiac-leaflet-enhancer-carlen-to-treat-functional-mitral-re.pdf}
+
+\bibitem{accucinch}
+The AccuCinch Ventricular Reconstruction System.
+\textit{PDF文件名: the-accucinch-ventricular-reconstruction-system.pdf}
+
+\bibitem{revivent}
+The BioVentrix Revivent System.
+\textit{PDF文件名: the-bioventrix-revivent-system.pdf}
+
+\bibitem{carillon}
+The Carillon Mitral Contour System.
+\textit{PDF文件名: the-carillon-mitral-contour-system.pdf}
+
+\bibitem{cleve}
+TCT-1484: CLEVE to the Rescue - Leveraging Innovation in Novel Leaflet Modification.
+\textit{PDF文件名: tct-1484-cleve-to-the-rescue-leveraging-innovation-in-novel-leaflet-modific.pdf}
+
+\bibitem{mteer}
+TCT-1499: Transcatheter Edge-to-Edge Repair for Severe Mitral Regurgitation.
+\textit{PDF文件名: tct-1499-transcatheter-edge-to-edge-repair-for-severe-mitral-regurgitation-i.pdf}
+
+\end{thebibliography}
+
+% ============================================
+% 附录（如果需要）
+% ============================================
+% \appendix
+% \chapter{附录A：缩略词表}
+% \chapter{附录B：补充数据}
+
+\end{document}

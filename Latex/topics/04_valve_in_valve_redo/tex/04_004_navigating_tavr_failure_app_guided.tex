@@ -1,0 +1,1431 @@
+\section{使用APP指导的决策制定应对TAVR失败}
+\label{sec:04_004_navigating_tavr_failure_app}
+
+% ============================================
+% 文献信息
+% ============================================
+\subsection{文献信息}
+
+\begin{itemize}
+    \item \textbf{标题}: Navigating TAVR Failure Using App-Guided Decision Making
+    \item \textbf{作者}: Miho Fukui, MD, PhD
+    \item \textbf{机构}: Minneapolis Heart Institute Foundation
+    \item \textbf{会议}: TCT (Transcatheter Cardiovascular Therapeutics)
+    \item \textbf{PDF文件名}: navigating-tavr-failure-using-app-guided-decision-making.pdf
+    \item \textbf{文献类型}: 会议演讲/技术介绍
+    \item \textbf{利益冲突}:
+    \begin{itemize}
+        \item Grant/Research Support: ANTERIS
+        \item Consultant Fees/Honoraria: Medtronic, Edwards
+    \end{itemize}
+\end{itemize}
+
+% ============================================
+% 研究背景
+% ============================================
+\subsection{研究背景}
+
+\subsubsection{TAVR失败处理的挑战}
+
+随着TAVR技术的广泛应用和患者生存期的延长，TAVR术后瓣膜失败（包括瓣膜结构性退化、瓣周漏、瓣膜功能不良等）的病例日益增多。这些患者面临两种主要治疗选择：
+
+\begin{enumerate}
+    \item \textbf{Redo-TAV}（再次经导管主动脉瓣置换）：在失败的TAVR瓣膜内再次植入一个经导管瓣膜（TAV-in-TAV）
+    \item \textbf{外科瓣膜取出}（TAV Explant）：通过外科手术取出失败的TAVR瓣膜并进行外科瓣膜置换（SAVR）
+\end{enumerate}
+
+\subsubsection{Redo-TAV的复杂性}
+
+Redo-TAV手术比初次TAVR更加复杂，主要挑战包括：
+
+\begin{itemize}
+    \item \textbf{冠状动脉阻塞风险}：第二个瓣膜可能推挤初始瓣膜的小叶，阻塞冠状动脉开口
+    \item \textbf{瓣膜尺寸选择}：需要准确测量初始瓣膜内径，选择合适的第二个瓣膜
+    \item \textbf{植入位置}：第二个瓣膜的植入深度直接影响血流动力学和冠状动脉安全
+    \item \textbf{瓣膜兼容性}：不同品牌和型号的瓣膜组合有不同的特性
+    \item \textbf{缺乏标准化流程}：各中心的评估和手术方法不统一
+\end{itemize}
+
+\subsubsection{Redo TAV APP的开发目的}
+
+为了解决上述挑战，一个国际专家团队开发了\textbf{Redo TAV APP}（可在iOS和Android平台下载），旨在：
+
+\begin{enumerate}
+    \item 提供标准化的CT评估流程
+    \item 指导第二个瓣膜的选择和尺寸决策
+    \item 评估冠状动脉阻塞风险
+    \item 提供手术植入指南
+    \item 收集和追踪手术结局数据
+    \item 提供教育资源和瓣膜特定信息
+\end{enumerate}
+
+% ============================================
+% 研究方法（APP功能和使用方法）
+% ============================================
+\subsection{APP功能和使用方法}
+
+\subsubsection{APP整体架构}
+
+Redo TAV APP提供了一个完整的决策支持系统，覆盖从可行性评估到手术实施再到结局追踪的全流程：
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[node distance=2cm, auto]
+    \node (ct) [draw, rectangle, minimum width=3cm, minimum height=1cm] {CT规划};
+    \node (assess) [below of=ct, draw, rectangle, minimum width=3cm, minimum height=1cm] {可行性评估};
+    \node (redo) [below left of=assess, draw, rectangle, minimum width=2.5cm, minimum height=1cm] {Redo-TAV};
+    \node (explant) [below right of=assess, draw, rectangle, minimum width=2.5cm, minimum height=1cm] {TAV Explant};
+    \node (outcome) [below of=assess, yshift=-2cm, draw, rectangle, minimum width=3cm, minimum height=1cm] {结局追踪};
+
+    \draw[->] (ct) -- (assess);
+    \draw[->] (assess) -- (redo);
+    \draw[->] (assess) -- (explant);
+    \draw[->] (redo) -- (outcome);
+\end{tikzpicture}
+\caption{Redo TAV APP工作流程}
+\end{figure}
+
+\textbf{APP主要功能模块}：
+
+\begin{itemize}
+    \item \textbf{Procedural Guide}（手术指南）：分步指导手术流程
+    \item \textbf{Redo-TAV CT Planning}（CT规划）：可行性评估的核心模块
+    \item \textbf{Procedure Data \& Outcome}（手术数据与结局）：记录和追踪手术结果
+    \item \textbf{Blank CT Summary Report}（空白CT总结报告）：生成标准化报告
+    \item \textbf{Terminology}（术语）：解释关键概念
+    \item \textbf{Coronary Access after Redo-TAV}（Redo-TAV后的冠状动脉通路）：教育内容
+    \item \textbf{Valve-Specific Resources}（瓣膜特定资源）：各品牌瓣膜的详细信息
+    \item \textbf{TAV Explant}（瓣膜取出）：外科取出的指导
+    \item \textbf{Case of the Month}（每月病例）：学习案例
+\end{itemize}
+
+\subsubsection{CT规划：4个关键要素}
+
+CT规划是可行性评估的核心，包含4个关键要素：
+
+\begin{table}[h]
+\centering
+\caption{CT规划的4个关键要素}
+\label{tab:ct_planning_elements}
+\begin{tabular}{lp{10cm}}
+\toprule
+\textbf{关键要素} & \textbf{评估内容} \\
+\midrule
+\textbf{1. 第二个TAV兼容性} & 评估初始瓣膜（Index TAV）与候选第二个瓣膜（Second TAV）的兼容性，包括瓣膜设计、支架类型、扩张特性等 \\
+\midrule
+\textbf{2. 冠状动脉风险} & 评估第二个瓣膜植入后阻塞冠状动脉开口的风险，测量RCA和LCA距离 \\
+\midrule
+\textbf{3. 第二个TAV尺寸选择} & 根据初始瓣膜的内径测量（Area和Perimeter），使用In-Vivo Sizing Algorithm选择第二个瓣膜的尺寸 \\
+\midrule
+\textbf{4. 植入位置} & 确定第二个瓣膜在初始瓣膜内的最佳植入深度（Node 3-6级别） \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{CT规划的标准化流程}
+
+\textbf{Step 1: 确认Index TAV（初始瓣膜）}
+
+\begin{itemize}
+    \item 选择初始瓣膜的品牌和型号（如Evolut R）
+    \item 输入初始瓣膜的尺寸（如29mm）
+\end{itemize}
+
+\textbf{Step 2: 选择Second TAV（第二个瓣膜）}
+
+\begin{itemize}
+    \item 选择第二个瓣膜的品牌和型号（如SAPIEN 3 Ultra）
+    \item 根据CT测量选择尺寸（如23mm）
+\end{itemize}
+
+\textbf{Step 3: Index TAV的CT测量}
+
+根据In-Vivo Sizing Algorithm测量：
+
+\begin{itemize}
+    \item \textbf{Area}（面积）：初始瓣膜的横截面积（单位：mm²）
+    \item \textbf{Perimeter}（周长）：初始瓣膜的内周长（单位：mm）
+\end{itemize}
+
+\textbf{Step 4: 识别关键平面}
+
+\begin{description}
+    \item[Index TAV Failure Mechanism] 初始瓣膜失败机制：主动脉瓣狭窄（AS）或主动脉瓣反流（AR）
+    \item[CRP (Coronary Risk Plane)] 冠状动脉风险平面：评估冠状动脉阻塞风险的参考平面
+    \item[NSP (Neoskirt Plane)] Neoskirt平面：第二个瓣膜组合后形成的最高平面，是评估冠状动脉风险的关键
+\end{itemize}
+
+\textbf{Step 5: 冠状动脉风险评估}
+
+APP自动计算并显示：
+
+\begin{itemize}
+    \item \textbf{VTA测量}：
+    \begin{itemize}
+        \item \textbf{RCA}（右冠状动脉）：NSP到RCA开口的距离（单位：mm）
+        \item \textbf{LCA}（左冠状动脉）：NSP到LCA开口的距离（单位：mm）
+    \end{itemize}
+
+    \item \textbf{风险等级分类}：
+    \begin{itemize}
+        \item \textcolor{red}{\textbf{High risk to coronaries}}（高风险）：RCA < 2mm 或 LCA < 3mm
+        \item \textcolor{orange}{\textbf{Intermediate risk to coronaries}}（中风险）：RCA 2-4mm 或 LCA 3-5mm
+        \item \textcolor{green}{\textbf{Low risk to coronaries}}（低风险）：RCA > 4mm 且 LCA > 5mm
+    \end{itemize}
+\end{itemize}
+
+当风险等级为高或中等时，APP会显示：\textbf{"Caution: Consider coronary protection if in doubt"}（警告：如有疑问，考虑冠状动脉保护）
+
+\textbf{Step 6: Commissure对齐评估}
+
+APP评估初始瓣膜的Commissure（连合）对齐情况：
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{cccc}
+\textbf{Aligned} & \textbf{Mild} & \textbf{Moderate} & \textbf{Severe} \\
+(理想对齐) & (轻度错位) & (中度错位) & (重度错位) \\
+0-15° & 15-30° & 30-45° & 45-60° \\
+\end{tabular}
+\caption{Commissure对齐分级}
+\end{figure}
+
+\subsubsection{CT规划流程图}
+
+APP提供了一页式的综合流程图，涵盖以下步骤：
+
+\begin{enumerate}
+    \item \textbf{确认Index TAV}：识别初始瓣膜的型号和尺寸
+    \item \textbf{识别CRP与Index TAV的关系}：
+    \begin{itemize}
+        \item CRP高于Index TAV的上方：直接进行下一步
+        \item CRP位于Index TAV内部或下方：需要特别注意冠状动脉风险
+    \end{itemize}
+    \item \textbf{选择Second TAV}：基于瓣膜兼容性和临床考虑
+    \item \textbf{理想的NSP水平}：识别不同Node（3-6）的可接受NSP水平
+    \item \textbf{评估CRP和NSP的关系}：
+    \begin{itemize}
+        \item 当CRP高于或位于Node 6：更高的植入位置，NSP = Node 5
+        \item 当CRP位于Node 4：较低的植入位置
+    \end{itemize}
+    \item \textbf{Second TAV尺寸选择}：
+    \begin{itemize}
+        \item 测量NSP和3 nodes以下的面积
+        \item 使用平均面积选择Second TAV尺寸
+    \end{itemize}
+    \item \textbf{冠状动脉风险评估}：在所有相关Node评估VTA
+    \begin{itemize}
+        \item VTA测量不需要如果CRP高于NSP
+        \item VTA测量必要如果CRP低于NSP
+    \end{itemize}
+    \item \textbf{决策选项}：
+    \begin{itemize}
+        \item Node 6植入为低风险
+        \item Leaflet modification（小叶修改）
+        \item 冠状动脉保护
+        \item 外科手术
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{手术指南功能}
+
+\textbf{Step 1: 选择Index TAV和尺寸}
+
+\textbf{Step 2: 选择Second TAV和尺寸}
+
+根据CT分析选择第二个瓣膜类型和尺寸。
+
+\textbf{Step 3: Second TAV的植入水平}
+
+APP显示4个可能的植入水平（Node级别）：
+
+\begin{table}[h]
+\centering
+\caption{Second TAV植入水平选项}
+\label{tab:implant_levels}
+\begin{tabular}{lp{10cm}}
+\toprule
+\textbf{Node级别} & \textbf{说明} \\
+\midrule
+\textbf{Node 6} & 最高植入位置，冠状动脉风险最低 \\
+\textbf{Node 5} & 推荐的植入位置（多数情况） \\
+\textbf{Node 4} & 较低植入位置 \\
+\textbf{Node 3} & 仅用于主动脉瓣反流（AR）的情况 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+APP提示：\textbf{"Implant outflow of S3 between Node 6 and 4"}（将S3的流出道植入在Node 6和4之间）
+
+\textbf{Step 4: Second TAV实施}
+
+对于每个Node级别，APP显示：
+
+\begin{itemize}
+    \item \textbf{Index TAV}：初始瓣膜信息（如Evolut 29）
+    \item \textbf{Second TAV}：第二个瓣膜信息（如S3/3Ultra 23）
+    \item \textbf{NSP level}：Neoskirt平面级别（如Node 5）
+    \item \textbf{Inflow to NSP}：流入口到NSP的距离（如21mm）
+    \item \textbf{S3/3Ultra高度}：第二个瓣膜的高度（如18mm）
+    \item \textbf{S3 inflow between Node}：S3流入口位于哪两个Node之间（如Node 1和8之间3mm）
+\end{itemize}
+
+通过透视图像，术者可以精确定位第二个瓣膜的植入位置。
+
+\subsubsection{手术数据与结局追踪}
+
+\textbf{Page 1: 手术数据}
+
+APP记录详细的手术参数：
+
+\begin{itemize}
+    \item \textbf{Index TAV}：初始瓣膜型号和尺寸
+    \item \textbf{Second TAV}：第二个瓣膜型号和尺寸
+    \item \textbf{Pre-Dilatation?}（预扩张）：Yes/No
+    \item \textbf{Balloon Size}（球囊尺寸）：单位mm
+    \item \textbf{Deployment of Second TAV}（第二个TAV的释放）：
+    \begin{itemize}
+        \item Inflation Volume: Nominal（标称）、Low、High
+    \end{itemize}
+    \item \textbf{Post-Dilatation?}（后扩张）：Yes/No
+    \item \textbf{With Delivery System}：Yes
+    \item \textbf{Volume Added}：追加的容量（cc）
+    \item \textbf{Coronary Protection?}（冠状动脉保护）：Yes/No
+    \begin{itemize}
+        \item Coronary Protection: Right/Left/Both
+    \end{itemize}
+    \item \textbf{Coronary Snorkel Stenting?}（冠状动脉烟囱支架）：Yes/No
+    \item \textbf{Leaflet Modification?}（小叶修改）：Yes/No
+\end{itemize}
+
+\textbf{Page 2: 结局数据}
+
+APP记录术后结局：
+
+\begin{itemize}
+    \item \textbf{NSP After Implant}（植入后的NSP）：选择Node 3-6
+    \item \textbf{Final Mean Gradient by Cath}（心导管测量的最终平均跨瓣压差）：单位mmHg
+    \item \textbf{Final Mean Gradient by Echo}（超声心动图测量的最终平均跨瓣压差）：单位mmHg
+    \item \textbf{Transvalvular AR}（跨瓣主动脉瓣反流）：None/Trace/Mild/Moderate/Severe
+    \item \textbf{Paravalvular AR}（瓣周主动脉瓣反流）：None/Trace/Mild/Moderate/Severe
+    \item \textbf{Intraprocedural Death?}（术中死亡）：Yes/No
+    \item \textbf{Conversion to Surgery?}（转外科手术）：Yes/No
+    \item \textbf{Valve Embolization?}（瓣膜栓塞）：Yes/No
+    \item \textbf{Another TAV Needed?}（需要另一个TAV）：Yes/No
+    \item \textbf{Annulus Injury?}（环空损伤）：Yes/No
+    \item \textbf{Acute Coronary Obstruction?}（急性冠状动脉阻塞）：Yes/No
+    \item \textbf{Obstruction}：Right/Left/Both
+    \item \textbf{Suspected Mechanism}：选择机制
+    \item \textbf{PCI Needed?}（需要PCI）：Yes/No
+\end{itemize}
+
+这些数据可用于质量改进和研究目的。
+
+\subsubsection{教育资源}
+
+\textbf{1. Redo-TAV后的冠状动脉通路}
+
+提供了6个主题的教育内容：
+
+\begin{enumerate}
+    \item \textbf{Access and Catheters}（通路和导管）：讨论Redo-TAV后传统冠状动脉插管方法可能不可行，通路选择和导管选择的重要性
+    \item \textbf{Fluoroscopy \& Redo-TAV}（透视与Redo-TAV）
+    \item \textbf{Sinus Sequestration}（窦隔离）
+    \item \textbf{Leaflet Overhang}（小叶悬垂）
+    \item \textbf{Commissural \& Cell Alignment}（连合与网格对齐）
+    \item \textbf{Coronary Obstruction}（冠状动脉阻塞）
+\end{enumerate}
+
+包含视频链接和文字说明。
+
+\textbf{2. TAV Explant（瓣膜取出）}
+
+提供了5个主题：
+
+\begin{enumerate}
+    \item \textbf{TAV Devices}（TAV器械）
+    \item \textbf{CT Scan Assessment}（CT扫描评估）
+    \item \textbf{Procedural Steps}（手术步骤）：
+    \begin{itemize}
+        \item Cannulation and Cross-clamp（插管和交叉钳夹）
+        \item Incision on the aorta（主动脉切口）
+        \item Cardioplegia（心脏停搏）
+        \item Dissection of the device from surrounding structures（从周围组织分离器械）
+        \begin{itemize}
+            \item Tall devices（高瓣膜）
+            \item Short devices（短瓣膜）
+        \end{itemize}
+        \item Removal（移除）
+    \end{itemize}
+    \item \textbf{Valve Explant Techniques}（瓣膜取出技术）
+    \item \textbf{Advance Considerations}（高级考虑）
+\end{enumerate}
+
+包含相关的YouTube视频链接：
+\begin{itemize}
+    \item "Evolut R TAV explant after 5 years for degeneration stenosis and regurgitation"
+    \item "Evolut R TAV explant after 2 years for severe PV leak and mitral surgery"
+    \item "Tourniquet Technique Evolut R"
+    \item "Sapien 3 S3 explant tips"
+\end{itemize}
+
+\textbf{3. 术语（Terminology）}
+
+APP解释了6个关键术语：
+
+\begin{enumerate}
+    \item \textbf{Neoskirt and Neoskirt Plane (NSP)}：
+    \begin{quote}
+    NSP定义为Redo-TAV组合选定后Neoskirt顶部的平面。NSP对于Redo-TAV组合是唯一的，可能位于单个或多个水平。在多个水平可行的组合中，水平由第二个TAV在Index TAV内的植入位置决定。NSP与原生解剖（即冠状动脉口、窦管结合部STJ等）的关系将根据Index TAV的深度而变化。
+    \end{quote}
+
+    \item \textbf{Coronary Risk Plane (CRP)}：冠状动脉风险平面
+
+    \item \textbf{VTAoS, VTC and VTSTJ}：虚拟经导管主动脉窦、虚拟经导管冠状动脉、虚拟经导管窦管结合部
+
+    \item \textbf{Leaflet Overhang}：小叶悬垂
+
+    \item \textbf{Commissure Alignment}：连合对齐
+
+    \item \textbf{Coronary Protection}：冠状动脉保护
+\end{enumerate}
+
+\textbf{4. 瓣膜特定资源}
+
+APP提供了8种常用TAVR瓣膜的详细信息：
+
+\begin{enumerate}
+    \item \textbf{ACURATE neo/neo2}
+    \item \textbf{Allegra}
+    \item \textbf{Evolut R/PRO/PRO+/FX}
+    \item \textbf{Lotus}
+    \item \textbf{MyVal}
+    \item \textbf{Portico/Navitor}
+    \item \textbf{SAPIEN 3/SAPIEN 3 Ultra}
+    \item \textbf{SAPIEN XT}
+\end{enumerate}
+
+对于每个瓣膜，提供：
+
+\begin{itemize}
+    \item \textbf{Valve Design}（瓣膜设计）：支架类型（如Self expandable自膨式、Balloon expandable球囊扩张式）、小叶材料等
+    \item \textbf{Valve Dimensions}（瓣膜尺寸）：可用尺寸
+    \item \textbf{Second TAV Options}（第二个TAV选项）：
+    \begin{itemize}
+        \item Short: 适合作为Second TAV的短瓣膜（如SAPIEN 3 family）
+        \item Tall: 适合作为Second TAV的高瓣膜（如Evolut family）
+    \end{itemize}
+    \item \textbf{NSP Levels}（NSP级别）
+    \item \textbf{CT Analysis Example}（CT分析示例）
+    \item \textbf{Sizing Table}（尺寸表）：测量参数和推荐尺寸
+    \item \textbf{Video Section}（视频部分）：相关操作视频
+\end{itemize}
+
+例如，对于\textbf{Portico/Navitor}：
+
+\begin{itemize}
+    \item \textbf{Design}: Self expandable（自膨式），Nitinol stent frame（镍钛合金支架），Tall device（高瓣膜）
+    \item \textbf{Iterations}: Portico, Navitor（迭代版本）
+    \item \textbf{Intra-annular}（环内）
+    \item \textbf{Sizes}: 4种尺寸（23, 25, 27, 29）
+    \item \textbf{Shape}: All sizes have the same shape（所有尺寸形状相同）
+    \item \textbf{Landmarks}（标志点）：
+    \begin{itemize}
+        \item Nadir of leaflets: Node 1（小叶最低点）
+        \item Top of Leaflets: Commissure tab (leaflet height)（小叶顶部）
+    \end{itemize}
+    \item \textbf{Compatible Second TAV Devices}：
+    \begin{itemize}
+        \item Short: SAPIEN 3 family
+        \item Tall: Evolut family
+    \end{itemize}
+    \item \textbf{Measurements for sizing of Second TAV}（Second TAV尺寸测量）：
+    \begin{itemize}
+        \item Short: Average of areas at NSP and 3 nodes below（NSP和下方3个nodes的平均面积）
+        \item Tall: Same or one size smaller size of Evolut（相同或小一号的Evolut尺寸）
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{动态总结报告生成}
+
+APP可以生成标准化的CT总结报告，包含：
+
+\begin{itemize}
+    \item \textbf{Index TAV}：型号和尺寸
+    \item \textbf{Second TAV}：型号和尺寸
+    \item \textbf{Index TAV Failure Mechanism}：失败机制（AS或AR）
+    \item \textbf{Index TAV平均面积和周长}：根据In-Vivo Sizing Algorithm
+    \item \textbf{CRP级别}：Node X
+    \item \textbf{NSP级别}：Node X
+    \item \textbf{RCA和LCA距离}：VTA测量值
+    \item \textbf{冠状动脉风险等级}：高风险/中风险/低风险
+    \item \textbf{Commissure对齐情况}：Aligned/Mildly Misaligned/Moderately Misaligned/Severely Misaligned
+    \item \textbf{Summary图像}：显示瓣膜位置和关键测量的示意图
+    \item \textbf{Narrowest VTA Values}：最窄的虚拟经导管主动脉值
+\end{itemize}
+
+这个报告可以：
+\begin{itemize}
+    \item 保存为PDF格式
+    \item 打印用于Heart Team讨论
+    \item 在手术室使用
+    \item 用于病例记录
+\end{itemize}
+
+% ============================================
+% 主要研究发现
+% ============================================
+\subsection{主要研究发现}
+
+\subsubsection{APP的核心创新}
+
+\textbf{1. 标准化的CT评估流程}
+
+传统上，各中心对Redo-TAV的CT评估方法各不相同，缺乏统一标准。Redo TAV APP提供了：
+
+\begin{itemize}
+    \item \textbf{统一的测量平面}：NSP和CRP的定义和测量方法
+    \item \textbf{标准化的测量参数}：Area、Perimeter、VTA距离
+    \item \textbf{一致的风险分层}：基于定量测量的风险等级
+\end{itemize}
+
+\textbf{2. In-Vivo Sizing Algorithm}
+
+不同于初次TAVR使用原生瓣环尺寸，Redo-TAV需要基于初始瓣膜的\textbf{实际内径}（In-Vivo尺寸）来选择第二个瓣膜：
+
+\begin{itemize}
+    \item 测量初始瓣膜在NSP水平和下方3个nodes的横截面积
+    \item 计算平均面积
+    \item 根据第二个瓣膜的尺寸表选择合适尺寸
+\end{itemize}
+
+这种方法考虑了初始瓣膜的实际扩张情况和几何形状。
+
+\textbf{3. 瓣膜特异性指导}
+
+APP包含了8种主要TAVR瓣膜的详细信息，每种瓣膜都有：
+
+\begin{itemize}
+    \item 独特的设计特征（自膨式vs球囊扩张式，高vs短）
+    \item 不同的Node级别定义
+    \item 特定的尺寸算法
+    \item 兼容的Second TAV选项
+\end{itemize}
+
+例如，\textbf{自膨式瓣膜（如Evolut）}作为Index TAV时：
+\begin{itemize}
+    \item 可以选择相同品牌（Evolut-in-Evolut）或不同品牌（SAPIEN-in-Evolut）
+    \item SAPIEN（短瓣膜）-in-Evolut更常见，因为冠状动脉风险较低
+\end{itemize}
+
+\textbf{球囊扩张式瓣膜（如SAPIEN）}作为Index TAV时：
+\begin{itemize}
+    \item 由于瓣膜较短，NSP位置较低，冠状动脉风险通常较小
+    \item 可以选择SAPIEN-in-SAPIEN或Evolut-in-SAPIEN
+\end{itemize}
+
+\textbf{4. 冠状动脉风险分层}
+
+APP提供了基于定量测量的风险分层：
+
+\begin{table}[h]
+\centering
+\caption{冠状动脉阻塞风险分层标准}
+\label{tab:coronary_risk_stratification}
+\begin{tabular}{lcc}
+\toprule
+\textbf{风险等级} & \textbf{RCA距离} & \textbf{LCA距离} \\
+\midrule
+\textcolor{green}{\textbf{低风险}} & > 4 mm & > 5 mm \\
+\textcolor{orange}{\textbf{中风险}} & 2-4 mm & 3-5 mm \\
+\textcolor{red}{\textbf{高风险}} & < 2 mm & < 3 mm \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+这些阈值基于现有文献和专家共识，帮助术者决定是否需要：
+\begin{itemize}
+    \item 冠状动脉保护（导丝保护或球囊保护）
+    \item Leaflet modification（小叶修改，如BASILICA或LAMPOON技术）
+    \item 调整植入深度
+    \item 考虑外科手术
+\end{itemize}
+
+\textbf{5. 手术指导的精确性}
+
+对于每个Node级别的植入位置，APP提供：
+
+\begin{itemize}
+    \item \textbf{Inflow to NSP}：第二个瓣膜流入口到NSP的理论距离
+    \item \textbf{Second TAV高度}：第二个瓣膜的总高度
+    \item \textbf{S3 inflow between Node X\&Y}：第二个瓣膜流入口应位于初始瓣膜的哪两个Node之间
+    \item \textbf{距离}：具体的偏移距离（如3mm）
+\end{itemize}
+
+这些信息帮助术者在透视下精确定位瓣膜释放位置。
+
+例如，对于\textbf{Evolut 29中植入SAPIEN 3 Ultra 23，选择Node 5}：
+\begin{itemize}
+    \item Inflow to NSP: 21 mm
+    \item S3/3Ultra 23高度: 18 mm
+    \item S3 inflow between Node 1\&0: 3 mm
+\end{itemize}
+
+术者在透视下应将SAPIEN 3 Ultra的流入口定位在Evolut的Node 1和Node 0之间，向Node 0方向偏移约3mm。
+
+\textbf{6. 结局数据收集}
+
+APP的结局追踪功能允许：
+
+\begin{itemize}
+    \item 个体中心的质量改进
+    \item 多中心数据汇总（如果未来建立数据库）
+    \item 识别并发症的危险因素
+    \item 评估不同瓣膜组合的表现
+    \item 优化手术技术
+\end{itemize}
+
+关键结局指标包括：
+\begin{itemize}
+    \item 血流动力学：平均跨瓣压差（心导管和超声）
+    \item 瓣膜功能：跨瓣和瓣周主动脉瓣反流
+    \item 并发症：术中死亡、转外科手术、瓣膜栓塞、环空损伤、冠状动脉阻塞
+    \item 需要额外干预：另一个TAV、PCI
+\end{itemize}
+
+\textbf{7. 教育和知识传播}
+
+APP的教育资源模块具有重要价值：
+
+\begin{itemize}
+    \item \textbf{视频教学}：来自全球专家的实际操作视频
+    \item \textbf{Case of the Month}：每月更新的教学病例
+    \item \textbf{术语解释}：帮助新手理解Redo-TAV的特殊概念
+    \item \textbf{Redo-TAV后冠状动脉通路}：这是一个特殊挑战，专门的教育模块很有价值
+\end{itemize}
+
+\subsubsection{全球协作的成果}
+
+这个APP的开发体现了国际协作的力量：
+
+\begin{table}[h]
+\centering
+\caption{Redo TAV APP国际贡献者（部分列表）}
+\label{tab:app_contributors}
+\begin{tabular}{lll}
+\toprule
+\textbf{专家姓名} & \textbf{机构} & \textbf{国家/地区} \\
+\midrule
+Vinayak (Vinnie) Bapat & Minneapolis Heart Institute Foundation & 美国 \\
+Miho Fukui & Minneapolis Heart Institute Foundation & 美国 \\
+Atsushi Okada & Minneapolis Heart Institute Foundation & 美国 \\
+Mady Olson & Minneapolis Heart Institute Foundation & 美国 \\
+Uri Landes & Rabin Medical Center & 以色列 \\
+Janar Sathananthan & St. Paul's Hospital & 加拿大 \\
+Ole De Backer & Rigshospitalet & 丹麦 \\
+Syed Zaid & Baylor College of Medicine & 美国 \\
+Gilbert Tang & Mount Sinai Hospital & 美国 \\
+Tsuyoshi Kaneko & Washington University & 美国 \\
+Shinichi Fukuhara & University of Michigan & 美国 \\
+Kiahitone Ronald Thao & Minneapolis Heart Institute Foundation & 美国 \\
+Ross Garberich & Minneapolis Heart Institute Foundation & 美国 \\
+Dariusz Dudek & Jagiellonian University Medical College & 波兰 \\
+Hasan Jilaihawi & Cedar Sinai Hospital & 美国 \\
+Daniel Blackman & Leeds Teaching Hospital & 英国 \\
+John Lesser & Minneapolis Heart Institute & 美国 \\
+Mohamed Abdel-Wahab & Heart Center Leipzig & 德国 \\
+Michael Reardon & Baylor College of Medicine & 美国 \\
+Arif Khokhar & Hammersmith Hospital, Imperial College & 英国 \\
+Alessandro Beneduce & IRCCS San Raffaele Scientific Institute & 意大利 \\
+Martin Leon & Columbia University Medical Center & 美国 \\
+Michael Mack & Baylor Scott \& White Health System & 美国 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+这个团队包括：
+\begin{itemize}
+    \item 介入心脏病学家
+    \item 心脏外科医生
+    \item 影像学专家
+    \item 临床研究人员
+\end{itemize}
+
+来自美国、欧洲、以色列等多个国家和地区的顶级医学中心。
+
+\subsubsection{APP的可及性}
+
+\begin{itemize}
+    \item \textbf{平台}：iOS（Apple App Store）和Android（Google Play）
+    \item \textbf{费用}：免费
+    \item \textbf{语言}：英语
+    \item \textbf{更新}：持续更新，添加新瓣膜、新功能、新病例
+\end{itemize}
+
+APP提供了QR码快速下载链接。
+
+% ============================================
+% 结论
+% ============================================
+\subsection{结论}
+
+\subsubsection{主要结论}
+
+\begin{enumerate}
+    \item \textbf{Redo TAV APP是一个实用工具}：涵盖从可行性评估到手术实施再到结局追踪的完整流程。
+
+    \item \textbf{标准化流程的重要性}：通过全球协作创建的标准化方法，使Redo-TAV更简单、更可预测、更安全。
+
+    \item \textbf{CT规划是关键}：系统的CT评估（4个关键要素：兼容性、冠状动脉风险、尺寸、位置）是成功Redo-TAV的基础。
+
+    \item \textbf{冠状动脉风险可以量化}：基于VTA测量的风险分层指导冠状动脉保护策略。
+
+    \item \textbf{瓣膜特异性很重要}：不同瓣膜的设计特征决定了不同的评估和手术方法。
+
+    \item \textbf{持续学习和改进}：这不是最终版本，而是持续学习和优化的起点，就像TAVR技术本身的发展历程。
+
+    \item \textbf{教育和知识传播}：APP不仅是工具，也是教育平台，帮助更多医生掌握Redo-TAV技术。
+
+    \item \textbf{数据驱动的质量改进}：结局追踪功能为未来的研究和质量改进提供基础。
+\end{enumerate}
+
+\subsubsection{Take-home Messages}
+
+\begin{itemize}
+    \item 该APP通过全球协作创建
+    \item 这不是终点，而是持续学习的起点
+    \item 我们的目标：使Redo-TAV更简单、标准化和优化
+    \item 需要继续完善它 - 就像我们为原生AS的TAVR所做的那样
+\end{itemize}
+
+% ============================================
+% 临床启示
+% ============================================
+\subsection{临床启示}
+
+\subsubsection{对临床实践的建议}
+
+\textbf{1. 术前评估}
+
+\begin{itemize}
+    \item \textbf{所有TAVR失败患者都应进行系统的CT评估}：使用Redo TAV APP的标准化流程
+    \item \textbf{多学科Heart Team讨论}：包括介入心脏病学家、心脏外科医生、影像学专家
+    \item \textbf{充分评估冠状动脉风险}：特别是对于高风险或中风险患者
+    \item \textbf{考虑所有治疗选择}：Redo-TAV vs. TAV Explant vs. 保守治疗
+\end{itemize}
+
+\textbf{2. 瓣膜和尺寸选择}
+
+\begin{itemize}
+    \item \textbf{使用In-Vivo Sizing Algorithm}：基于初始瓣膜的实际内径，而非原生瓣环尺寸
+    \item \textbf{考虑瓣膜兼容性}：
+    \begin{itemize}
+        \item 自膨式（如Evolut）+球囊扩张式（如SAPIEN）：常见组合，短瓣膜降低冠状动脉风险
+        \item 相同品牌（如Evolut-in-Evolut或SAPIEN-in-SAPIEN）：也是可行选择
+    \end{itemize}
+    \item \textbf{避免过大或过小}：
+    \begin{itemize}
+        \item 过大：增加环空损伤和冠状动脉阻塞风险
+        \item 过小：瓣周漏和瓣膜栓塞风险
+    \end{itemize}
+\end{itemize}
+
+\textbf{3. 植入策略}
+
+\begin{itemize}
+    \item \textbf{选择合适的NSP级别}：
+    \begin{itemize}
+        \item 优先考虑Node 5或Node 6（更高位置），降低冠状动脉风险
+        \item 对于主动脉瓣反流为主的失败机制，可能需要更低位置（Node 4或3）
+    \end{itemize}
+    \item \textbf{精确的植入深度控制}：根据APP提供的具体距离和Node标志定位
+    \item \textbf{准备应对并发症}：
+    \begin{itemize}
+        \item 高风险患者准备冠状动脉保护（导丝或球囊）
+        \item 必要时使用Leaflet modification技术（BASILICA, LAMPOON）
+        \item 准备冠状动脉烟囱支架（Chimney stenting）
+    \end{itemize}
+\end{itemize}
+
+\textbf{4. 冠状动脉保护策略}
+
+根据风险等级采取不同策略：
+
+\begin{table}[h]
+\centering
+\caption{基于风险等级的冠状动脉保护策略}
+\label{tab:coronary_protection_strategy}
+\begin{tabular}{lp{10cm}}
+\toprule
+\textbf{风险等级} & \textbf{推荐策略} \\
+\midrule
+\textbf{低风险} & 通常不需要特殊保护，标准Redo-TAV流程 \\
+\midrule
+\textbf{中风险} & \begin{itemize}
+    \item 考虑预防性导丝保护
+    \item 准备球囊和冠状动脉支架
+    \item 密切监测血流动力学和心电图
+\end{itemize} \\
+\midrule
+\textbf{高风险} & \begin{itemize}
+    \item 强烈建议预防性冠状动脉保护
+    \item 考虑Leaflet modification（BASILICA/LAMPOON）
+    \item 考虑调整植入深度（如果可行）
+    \item 或考虑外科TAV Explant
+    \item 准备紧急PCI或CABG
+\end{itemize} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{5. 术中监测}
+
+\begin{itemize}
+    \item \textbf{实时血流动力学监测}：主动脉压、左室压、跨瓣压差
+    \item \textbf{持续心电图监测}：识别ST段改变
+    \item \textbf{透视下的精确定位}：参考APP提供的Node标志
+    \item \textbf{瓣膜释放后即刻评估}：
+    \begin{itemize}
+        \item 冠状动脉造影（特别是中高风险患者）
+        \item 主动脉瓣反流评估
+        \item 平均跨瓣压差测量
+    \end{itemize}
+\end{itemize}
+
+\textbf{6. 术后随访}
+
+\begin{itemize}
+    \item \textbf{记录结局数据}：使用APP的结局追踪功能
+    \item \textbf{超声心动图随访}：
+    \begin{itemize}
+        \item 出院前
+        \item 30天
+        \item 1年
+        \item 此后每年
+    \end{itemize}
+    \item \textbf{关注长期问题}：
+    \begin{itemize}
+        \item 血流动力学演变（跨瓣压差增加？）
+        \item 瓣周漏进展
+        \item 延迟的冠状动脉阻塞
+        \item 瓣膜耐久性
+    \end{itemize}
+\end{itemize}
+
+\textbf{7. 质量改进}
+
+\begin{itemize}
+    \item 建立本中心的Redo-TAV数据库
+    \item 定期进行病例回顾和讨论
+    \item 识别并发症的危险因素
+    \item 优化流程和技术
+    \item 参与多中心研究和注册研究
+\end{itemize}
+
+\subsubsection{对患者教育的启示}
+
+\textbf{1. TAVR并非"一劳永逸"}
+
+\begin{itemize}
+    \item 患者需要了解TAVR瓣膜可能失败
+    \item 强调终身随访的重要性
+    \item 识别症状恶化的征象（呼吸困难、疲劳、胸痛等）
+\end{itemize}
+
+\textbf{2. Redo-TAV是可行的选择}
+
+\begin{itemize}
+    \item 对于TAVR失败，Redo-TAV通常是可行的
+    \item 系统的评估和规划使手术更安全
+    \item 与外科手术相比，Redo-TAV创伤更小、恢复更快
+\end{itemize}
+
+\textbf{3. 个体化决策}
+
+\begin{itemize}
+    \item 每个患者的解剖和临床情况不同
+    \item Heart Team会根据CT评估结果推荐最佳治疗
+    \item 患者应参与决策过程
+\end{itemize}
+
+\subsubsection{对研究的启示}
+
+\textbf{1. 建立Redo-TAV注册研究}
+
+\begin{itemize}
+    \item 利用APP的数据收集功能
+    \item 多中心、国际性的数据汇总
+    \item 研究问题：
+    \begin{itemize}
+        \item Redo-TAV的长期结局（5年、10年）
+        \item 不同瓣膜组合的比较
+        \item 冠状动脉阻塞的危险因素
+        \item Leaflet modification的效果
+        \item 冠状动脉保护策略的有效性
+    \end{itemize}
+\end{itemize}
+
+\textbf{2. 评估APP的临床价值}
+
+\begin{itemize}
+    \item 前瞻性研究：APP使用前后的并发症率比较
+    \item 学习曲线：APP是否缩短新手的学习时间
+    \item 标准化的价值：中心间结局差异是否缩小
+\end{itemize}
+
+\textbf{3. 开发新技术}
+
+\begin{itemize}
+    \item AI辅助的CT自动分析和风险预测
+    \item 3D打印模型用于术前规划
+    \item 虚拟现实（VR）手术模拟
+    \item 新型瓣膜设计优化Redo-TAV
+\end{itemize}
+
+\textbf{4. 扩展到其他领域}
+
+\begin{itemize}
+    \item 类似的APP用于：
+    \begin{itemize}
+        \item Valve-in-SAVR（外科瓣膜内的TAVR）
+        \item Transcatheter mitral valve replacement（经导管二尖瓣置换）
+        \item Transcatheter tricuspid valve replacement（经导管三尖瓣置换）
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{对医学教育的启示}
+
+\textbf{1. 标准化培训}
+
+\begin{itemize}
+    \item 将APP纳入TAVR培训课程
+    \item 使用APP进行病例讨论
+    \item 模拟病例练习（使用APP规划虚拟病例）
+\end{itemize}
+
+\textbf{2. 多学科团队培训}
+
+\begin{itemize}
+    \item 介入心脏病学家、心脏外科医生、影像学专家共同学习
+    \item 理解各专业的视角和贡献
+    \item 提高团队协作效率
+\end{itemize}
+
+\textbf{3. 持续医学教育（CME）}
+
+\begin{itemize}
+    \item 定期更新关于Redo-TAV的知识
+    \item 分享新的病例和技术
+    \item 参加相关会议和研讨会
+\end{itemize}
+
+% ============================================
+% 研究局限性
+% ============================================
+\subsection{研究局限性}
+
+\begin{enumerate}
+    \item \textbf{这是一个会议演讲和APP介绍，而非临床研究}：
+    \begin{itemize}
+        \item 未提供APP使用的临床结局数据
+        \item 缺乏对照研究（APP使用 vs. 传统方法）
+        \item 未报告APP的准确性和可靠性验证
+    \end{itemize}
+
+    \item \textbf{APP基于专家共识和现有文献}：
+    \begin{itemize}
+        \item 冠状动脉风险阈值（RCA < 2mm, LCA < 3mm为高风险）可能需要更多数据验证
+        \item In-Vivo Sizing Algorithm的最佳参数尚不完全确定
+        \item 不同瓣膜组合的推荐可能随着经验积累而改变
+    \end{itemize}
+
+    \item \textbf{技术和设备限制}：
+    \begin{itemize}
+        \item 需要高质量的CT扫描（心脏专用CT，适当的时相和分辨率）
+        \item CT测量存在观察者间和观察者内变异性
+        \item APP的测量依赖于用户输入的准确性
+        \item 自动化测量功能尚未实现
+    \end{itemize}
+
+    \item \textbf{瓣膜覆盖不完全}：
+    \begin{itemize}
+        \item APP目前包含8种主要瓣膜
+        \item 一些较新的瓣膜（如Myval, Allegra）的数据可能有限
+        \item 对于停产或罕见瓣膜缺乏信息
+    \end{itemize}
+
+    \item \textbf{解剖排除标准}：
+    \begin{itemize}
+        \item 某些复杂解剖（如严重的主动脉根部扩张、初始瓣膜严重错位）可能不适用APP的标准流程
+        \item 对于极端病例，可能需要个体化方案
+    \end{itemize}
+
+    \item \textbf{缺乏长期随访数据}：
+    \begin{itemize}
+        \item Redo-TAV本身是相对较新的技术
+        \item 长期耐久性数据（5年、10年）仍然缺乏
+        \item 不清楚第二个瓣膜再次失败后的处理策略
+    \end{itemize}
+
+    \item \textbf{使用障碍}：
+    \begin{itemize}
+        \item APP目前仅提供英语版本
+        \item 需要智能手机或平板电脑
+        \item 需要一定的学习曲线
+        \item 某些地区可能无法访问Apple App Store或Google Play
+    \end{itemize}
+
+    \item \textbf{不能替代临床判断}：
+    \begin{itemize}
+        \item APP提供指导，但不能取代有经验的术者的判断
+        \item 每个患者的情况独特，可能需要偏离标准流程
+        \item 术中决策仍需要实时评估和灵活应对
+    \end{itemize}
+
+    \item \textbf{未涉及某些重要问题}：
+    \begin{itemize}
+        \item Redo-TAV vs. TAV Explant的选择标准
+        \item 术前药物治疗优化
+        \item 麻醉管理策略
+        \item 卒中预防
+        \item 成本效益分析
+    \end{itemize}
+
+    \item \textbf{数据隐私和安全}：
+    \begin{itemize}
+        \item 如果使用APP记录患者数据，需要符合HIPAA等隐私法规
+        \item 数据存储和传输的安全性需要保障
+    \end{itemize}
+\end{enumerate}
+
+% ============================================
+% 个人笔记
+% ============================================
+\subsection{个人笔记}
+
+\subsubsection{关键数字和参数}
+
+\textbf{1. 冠状动脉风险阈值（务必记忆）}：
+
+\begin{table}[h]
+\centering
+\caption{冠状动脉风险分层阈值（关键记忆点）}
+\label{tab:key_coronary_thresholds}
+\begin{tabular}{lccc}
+\toprule
+\textbf{冠状动脉} & \textbf{高风险} & \textbf{中风险} & \textbf{低风险} \\
+\midrule
+RCA & < 2 mm & 2-4 mm & > 4 mm \\
+LCA & < 3 mm & 3-5 mm & > 5 mm \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{记忆技巧}：
+\begin{itemize}
+    \item RCA的数字都是偶数：\textbf{2-4} mm中风险，<\textbf{2} 高风险，>\textbf{4} 低风险
+    \item LCA的数字都是奇数：\textbf{3-5} mm中风险，<\textbf{3} 高风险，>\textbf{5} 低风险
+    \item LCA的阈值比RCA高1mm（因为LCA口径更大，供血更重要）
+\end{itemize}
+
+\textbf{2. Node级别}：
+
+\begin{itemize}
+    \item \textbf{Node 6}：最高植入位置，冠状动脉风险最低，但可能血流动力学不理想
+    \item \textbf{Node 5}：\textbf{推荐位置}（多数情况下的最佳平衡）
+    \item \textbf{Node 4}：较低植入，用于某些特殊情况
+    \item \textbf{Node 3}：仅用于主动脉瓣反流（AR）为主的失败机制
+\end{itemize}
+
+\textbf{3. Commissure对齐角度}：
+
+\begin{itemize}
+    \item \textbf{0-15°}：Aligned（理想对齐）
+    \item \textbf{15-30°}：Mildly Misaligned（轻度错位）
+    \item \textbf{30-45°}：Moderately Misaligned（中度错位）
+    \item \textbf{45-60°}：Severely Misaligned（重度错位）
+\end{itemize}
+
+Commissure对齐影响第二个瓣膜的小叶和网格对齐，进而影响未来的冠状动脉通路。
+
+\subsubsection{重要概念和术语}
+
+\begin{description}
+    \item[NSP (Neoskirt Plane)] \textbf{Neoskirt平面} - Redo-TAV组合后形成的最高平面，是评估冠状动脉风险的关键参考点。NSP的位置取决于Index TAV和Second TAV的组合以及Second TAV的植入深度。
+
+    \item[CRP (Coronary Risk Plane)] \textbf{冠状动脉风险平面} - 评估冠状动脉阻塞风险的参考平面，通常位于冠状动脉开口的水平。
+
+    \item[In-Vivo Sizing Algorithm] \textbf{体内尺寸算法} - 不同于初次TAVR使用原生瓣环尺寸，Redo-TAV需要基于初始瓣膜的实际内径（考虑瓣膜扩张后的真实几何形状）来选择第二个瓣膜尺寸。测量NSP和下方3个nodes的面积，计算平均值。
+
+    \item[VTA (Virtual Transcatheter Aortic)] \textbf{虚拟经导管主动脉} - 包括：
+    \begin{itemize}
+        \item \textbf{VTAoS}：虚拟经导管主动脉窦
+        \item \textbf{VTC}：虚拟经导管冠状动脉
+        \item \textbf{VTSTJ}：虚拟经导管窦管结合部
+    \end{itemize}
+    这些是在Redo-TAV组合后形成的"新"解剖结构，用于评估冠状动脉距离。
+
+    \item[TAV-in-TAV] \textbf{瓣中瓣} - Redo-TAV的另一种说法，强调是在失败的TAVR瓣膜内再次植入一个TAVR瓣膜。
+
+    \item[Leaflet Modification] \textbf{小叶修改} - 通过撕裂或开窗初始瓣膜的小叶来降低冠状动脉阻塞风险。主要技术包括：
+    \begin{itemize}
+        \item \textbf{BASILICA} (Bioprosthetic or native Aortic Scallop Intentional Laceration to prevent Iatrogenic Coronary Artery obstruction)：有意撕裂生物瓣膜或原生主动脉瓣小叶以防止医源性冠状动脉阻塞
+        \item \textbf{LAMPOON} (Intentional Laceration of the Anterior Mitral leaflet to Prevent Outflow ObstructioN)：虽然主要用于二尖瓣，概念类似
+    \end{itemize}
+
+    \item[Coronary Protection] \textbf{冠状动脉保护} - 预防性措施以防冠状动脉阻塞：
+    \begin{itemize}
+        \item \textbf{导丝保护}：在冠状动脉内预置导丝
+        \item \textbf{球囊保护}：在冠状动脉内预置球囊
+        \item \textbf{Chimney stenting}：烟囱支架技术
+    \end{itemize}
+
+    \item[Sinus Sequestration] \textbf{窦隔离} - Redo-TAV后，Valsalva窦可能被第二个瓣膜的支架或小叶隔离，影响冠状动脉血流或未来的冠状动脉通路。
+
+    \item[Leaflet Overhang] \textbf{小叶悬垂} - 初始瓣膜的小叶可能悬垂在第二个瓣膜之上或之外，影响血流动力学和冠状动脉通路。
+
+    \item[Cell Alignment] \textbf{网格对齐} - 对于自膨式瓣膜（如Evolut），支架的网格结构对齐情况影响未来通过网格进行冠状动脉插管的可行性。
+\end{description}
+
+\subsubsection{临床决策流程图（个人总结）}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[node distance=2.5cm, auto, >=latex']
+    \node [draw, rectangle, rounded corners, minimum width=3cm, minimum height=1cm] (start) {TAVR失败};
+    \node [draw, diamond, below of=start, aspect=2, minimum width=3cm] (surgical) {可耐受外科手术？};
+    \node [draw, rectangle, below left of=surgical, minimum width=2.5cm, node distance=3.5cm] (explant) {TAV Explant};
+    \node [draw, rectangle, below right of=surgical, minimum width=2.5cm, node distance=3.5cm] (ct) {CT评估};
+    \node [draw, diamond, below of=ct, aspect=2, minimum width=3cm, node distance=3cm] (feasible) {Redo-TAV可行？};
+    \node [draw, rectangle, below left of=feasible, minimum width=2.5cm, node distance=3.5cm] (medical) {药物治疗};
+    \node [draw, rectangle, below right of=feasible, minimum width=2.5cm, node distance=3.5cm] (redo) {Redo-TAV};
+
+    \draw[->] (start) -- (surgical);
+    \draw[->] (surgical) -- node[left] {否或高风险} (explant);
+    \draw[->] (surgical) -- node[right] {是} (ct);
+    \draw[->] (ct) -- (feasible);
+    \draw[->] (feasible) -- node[left] {否} (medical);
+    \draw[->] (feasible) -- node[right] {是} (redo);
+\end{tikzpicture}
+\caption{TAVR失败处理的临床决策流程（简化版）}
+\end{figure}
+
+\subsubsection{常见瓣膜组合}
+
+根据文献和经验，常见的Redo-TAV瓣膜组合包括：
+
+\begin{table}[h]
+\centering
+\caption{常见的Redo-TAV瓣膜组合}
+\label{tab:common_valve_combinations}
+\begin{tabular}{llp{6cm}}
+\toprule
+\textbf{Index TAV} & \textbf{Second TAV} & \textbf{特点} \\
+\midrule
+Evolut (自膨式，高) & SAPIEN 3/3 Ultra (球囊扩张式，短) & \textbf{最常见组合}，短瓣膜降低冠状动脉风险，球囊扩张式可精确控制 \\
+\midrule
+SAPIEN 3/XT (球囊扩张式，短) & SAPIEN 3/3 Ultra & 相同品牌，尺寸选择相对简单，冠状动脉风险通常较低 \\
+\midrule
+Evolut & Evolut (自膨式，高) & 相同品牌，但需要注意冠状动脉风险，可能需要更高植入位置 \\
+\midrule
+Portico/Navitor (自膨式，高) & SAPIEN 3/3 Ultra & 类似Evolut-in-SAPIEN组合 \\
+\midrule
+CoreValve & SAPIEN 3 & 较早期的瓣膜，组合经验较多 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{选择原则}：
+\begin{itemize}
+    \item \textbf{自膨式+球囊扩张式}：利用各自优势，球囊扩张式更短，精确控制
+    \item \textbf{相同品牌}：熟悉度高，但需注意特定风险
+    \item \textbf{短瓣膜作为Second TAV}：降低冠状动脉阻塞风险
+\end{itemize}
+
+\subsubsection{APP使用技巧}
+
+\begin{enumerate}
+    \item \textbf{CT扫描质量至关重要}：
+    \begin{itemize}
+        \item 心脏专用CT协议
+        \item 适当的时相（舒张期末，通常75\%）
+        \item 足够的分辨率（层厚≤1mm）
+        \item 良好的对比剂强化
+    \end{itemize}
+
+    \item \textbf{准确识别Index TAV的标志点}：
+    \begin{itemize}
+        \item 小叶的最低点（Nadir）
+        \item 连合的位置（Commissure）
+        \item 支架的Node或网格结构
+    \end{itemize}
+
+    \item \textbf{多平面测量}：
+    \begin{itemize}
+        \item 不要仅在单一层面测量
+        \item NSP水平和下方3 nodes都要测量
+        \item 计算平均值更准确
+    \end{itemize}
+
+    \item \textbf{保守估计冠状动脉风险}：
+    \begin{itemize}
+        \item 如果接近阈值（如RCA = 2.5mm），按高风险处理
+        \item 宁可过度保护，不要低估风险
+    \end{itemize}
+
+    \item \textbf{生成并保存CT总结报告}：
+    \begin{itemize}
+        \item 用于Heart Team讨论
+        \item 术中参考
+        \item 病例存档
+    \end{itemize}
+
+    \item \textbf{探索教育资源}：
+    \begin{itemize}
+        \item 观看视频教程
+        \item 查看Case of the Month
+        \item 熟悉术语和概念
+    \end{itemize}
+
+    \item \textbf{记录结局数据}：
+    \begin{itemize}
+        \item 即使手术成功，也应记录数据
+        \item 有助于个人和中心的学习曲线
+        \item 为未来研究贡献数据
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{与中国实践的相关性}
+
+\textbf{1. 中国的TAVR发展现状}：
+
+\begin{itemize}
+    \item 中国TAVR起步较晚但发展迅速
+    \item 使用的瓣膜品牌包括：
+    \begin{itemize}
+        \item 进口：Sapien 3, Evolut Pro/Pro+, Portico等
+        \item 国产：VitaFlow, TaurusOne, Venus A-Valve等
+    \end{itemize}
+    \item Redo-TAV经验相对有限
+\end{itemize}
+
+\textbf{2. APP在中国的应用}：
+
+\begin{itemize}
+    \item \textbf{优势}：
+    \begin{itemize}
+        \item 提供标准化流程，帮助快速建立Redo-TAV能力
+        \item 国际认可的方法，便于与国际交流
+        \item 教育资源丰富，适合学习
+    \end{itemize}
+
+    \item \textbf{挑战}：
+    \begin{itemize}
+        \item APP目前仅英语版本，可能存在语言障碍
+        \item 某些国产瓣膜未包含在APP中（如VitaFlow, TaurusOne）
+        \item 需要根据国产瓣膜的特性进行适配
+    \end{itemize}
+
+    \item \textbf{建议}：
+    \begin{itemize}
+        \item 对于进口瓣膜，直接使用APP
+        \item 对于国产瓣膜，参考类似设计的进口瓣膜（如VitaFlow类似SAPIEN，TaurusOne类似Evolut）
+        \item 建立中国自己的Redo-TAV数据库
+        \item 考虑开发中文版或适应中国实践的类似工具
+    \end{itemize}
+\end{itemize}
+
+\textbf{3. 中国特色的考虑}：
+
+\begin{itemize}
+    \item \textbf{瓣膜尺寸}：中国患者平均体型较小，瓣环尺寸可能较小，需要注意小尺寸瓣膜的Redo-TAV策略
+    \item \textbf{解剖特点}：亚洲人群的冠状动脉解剖可能与西方人群有差异
+    \item \textbf{经济考虑}：进口瓣膜成本高，国产瓣膜更经济，需要平衡成本和效果
+    \item \textbf{长期随访}：建立完善的TAVR患者登记和随访系统，及时识别瓣膜失败
+\end{itemize}
+
+\subsubsection{未来展望}
+
+\textbf{1. APP的持续改进}：
+
+\begin{itemize}
+    \item 添加更多瓣膜（特别是新型瓣膜和国产瓣膜）
+    \item AI自动CT测量和分析
+    \item 多语言版本（包括中文）
+    \item 3D可视化和模拟
+    \item 云端数据库和多中心数据共享
+\end{itemize}
+
+\textbf{2. Redo-TAV技术的发展}：
+
+\begin{itemize}
+    \item 专门设计用于Redo-TAV的瓣膜
+    \item 更有效的Leaflet modification技术
+    \item 冠状动脉保护的标准化方案
+    \item 经导管瓣膜取出技术（避免外科手术）
+\end{itemize}
+
+\textbf{3. Redo-Redo-TAV（第三次经导管瓣膜置换）}：
+
+\begin{itemize}
+    \item 随着第一代TAVR患者的长期生存，可能需要面对第二次失败
+    \item Redo-Redo-TAV的可行性和安全性需要研究
+    \item 可能需要更先进的工具和技术
+\end{itemize}
+
+\textbf{4. 预防瓣膜失败}：
+
+\begin{itemize}
+    \item 改进瓣膜设计和材料，延长耐久性
+    \item 优化初次TAVR技术，减少瓣膜功能不良
+    \item 抗钙化治疗研究
+    \item 精准医疗：根据患者特征选择最合适的瓣膜
+\end{itemize}
+
+\subsubsection{值得思考的问题}
+
+\begin{enumerate}
+    \item \textbf{Redo-TAV vs. TAV Explant：如何选择？}
+    \begin{itemize}
+        \item 考虑因素：患者手术风险、解剖可行性、预期寿命、患者偏好
+        \item 一般而言，高手术风险患者倾向Redo-TAV，年轻低风险患者可能更适合TAV Explant
+        \item 某些解剖情况（冠状动脉高风险、初始瓣膜严重错位）可能Explant更安全
+    \end{itemize}
+
+    \item \textbf{冠状动脉风险阈值是否需要调整？}
+    \begin{itemize}
+        \item 现有阈值（RCA < 2mm, LCA < 3mm）基于有限数据
+        \item 不同瓣膜组合的风险阈值可能不同
+        \item 需要更多前瞻性研究验证
+    \end{itemize}
+
+    \item \textbf{In-Vivo Sizing是否总是准确？}
+    \begin{itemize}
+        \item 初始瓣膜可能欠扩张或过扩张
+        \item 瓣膜退化后几何形状可能改变
+        \item 可能需要结合多种测量方法
+    \end{itemize}
+
+    \item \textbf{Leaflet modification的长期影响？}
+    \begin{itemize}
+        \item BASILICA等技术的长期安全性和有效性
+        \item 是否增加血栓或栓塞风险
+        \item 对瓣膜血流动力学的影响
+    \end{itemize}
+
+    \item \textbf{APP能否改善Redo-TAV结局？}
+    \begin{itemize}
+        \item 需要前瞻性研究比较APP使用前后的并发症率
+        \item 标准化是否真正降低了风险
+        \item APP的教育价值如何量化
+    \end{itemize}
+
+    \item \textbf{对于未包含在APP中的瓣膜如何处理？}
+    \begin{itemize}
+        \item 参考类似设计的瓣膜
+        \item 咨询有经验的专家
+        \item 贡献数据帮助APP添加新瓣膜
+    \end{itemize}
+
+    \item \textbf{Redo-TAV后的冠状动脉通路}：
+    \begin{itemize}
+        \item 双层瓣膜后进行PCI的技术挑战
+        \item 需要专门的技术和器械
+        \item APP的教育资源在这方面很有价值
+    \end{itemize}
+
+    \item \textbf{如何平衡手术简便性和长期结局？}
+    \begin{itemize}
+        \item 较高的植入位置（Node 6）冠状动脉风险低但可能血流动力学欠佳
+        \item 较低的植入位置（Node 4-5）血流动力学好但冠状动脉风险可能增加
+        \item 需要个体化权衡
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{个人行动计划}
+
+作为TAVR术者，学习和应用Redo TAV APP的建议步骤：
+
+\begin{enumerate}
+    \item \textbf{下载和熟悉APP}：
+    \begin{itemize}
+        \item 从Apple App Store或Google Play下载
+        \item 浏览所有模块，了解功能
+        \item 观看教育视频
+    \end{itemize}
+
+    \item \textbf{学习理论基础}：
+    \begin{itemize}
+        \item 阅读相关文献（如Bapat VN等的指南文章）
+        \item 理解NSP、CRP、VTA等关键概念
+        \item 学习不同瓣膜的设计特点
+    \end{itemize}
+
+    \item \textbf{练习CT分析}：
+    \begin{itemize}
+        \item 使用历史病例练习CT测量
+        \item 与影像学专家合作，提高测量准确性
+        \item 使用APP生成模拟报告
+    \end{itemize}
+
+    \item \textbf{参与Heart Team讨论}：
+    \begin{itemize}
+        \item 在讨论TAVR失败病例时使用APP
+        \item 与心脏外科医生讨论Redo-TAV vs. Explant
+        \item 形成本中心的决策流程
+    \end{itemize}
+
+    \item \textbf{观摩和实践}：
+    \begin{itemize}
+        \item 如有可能，观摩经验丰富的术者进行Redo-TAV
+        \item 参加相关培训课程和模拟训练
+        \item 从简单病例开始（低冠状动脉风险）
+    \end{itemize}
+
+    \item \textbf{建立本中心数据库}：
+    \begin{itemize}
+        \item 使用APP记录所有Redo-TAV病例
+        \item 定期回顾和分析结局
+        \item 识别改进机会
+    \end{itemize}
+
+    \item \textbf{持续学习}：
+    \begin{itemize}
+        \item 关注APP更新
+        \item 阅读最新文献
+        \item 参加TCT等国际会议
+        \item 与全球同行交流经验
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{推荐资源}
+
+\begin{itemize}
+    \item \textbf{APP下载}：
+    \begin{itemize}
+        \item Apple App Store：搜索"Redo TAV"
+        \item Google Play：搜索"Redo TAV"
+        \item 或扫描演讲中提供的QR码
+    \end{itemize}
+
+    \item \textbf{相关文献}（推荐阅读）：
+    \begin{itemize}
+        \item Bapat VN, et al. "A Guide to Transcatheter Aortic Valve Design and Systematic Planning for a Redo-TAV (TAV-in-TAV) Procedure" (参考APP中引用的指南文章)
+        \item 关于BASILICA技术的文献
+        \item 各瓣膜的Redo-TAV系列病例报告
+    \end{itemize}
+
+    \item \textbf{在线资源}：
+    \begin{itemize}
+        \item TCT会议网站（演讲录像）
+        \item YouTube上的Redo-TAV手术视频
+        \item SCAI、ACC、ESC等学会的教育资源
+    \end{itemize}
+
+    \item \textbf{培训课程}：
+    \begin{itemize}
+        \item Structural Heart Disease培训项目
+        \item 瓣膜公司提供的Proctoring项目
+        \item 国际专家的Workshop和Live Cases
+    \end{itemize}
+\end{itemize}

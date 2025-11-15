@@ -1,6 +1,6 @@
 # TAVR文献处理进度清单
 
-**总进度**: 3/231 (1.3%)
+**总进度**: 31/231 (13.4%)
 
 **最后更新**: 2025-11-14
 
@@ -290,11 +290,11 @@
 ---
 
 ## 主题15: 同期治疗与二尖瓣 (Concomitant & Mitral)
-**进度**: 0/3
+**进度**: 3/3 ✅
 
-- [ ] tct-1188-patients-with-moderate-to-severe-baseline-mr-before-tavr-showed-gre.pdf
-- [ ] tct-1190-masked-gradients-hemodynamic-impact-of-mteer-on-aortic-stenosis-cl.pdf
-- [ ] tct-1187-perioperative-outcomes-in-patients-undergoing-transcatheter-aortic.pdf
+- [x] tct-1188-patients-with-moderate-to-severe-baseline-mr-before-tavr-showed-gre.pdf
+- [x] tct-1190-masked-gradients-hemodynamic-impact-of-mteer-on-aortic-stenosis-cl.pdf
+- [x] tct-1187-perioperative-outcomes-in-patients-undergoing-transcatheter-aortic.pdf
 
 ---
 
